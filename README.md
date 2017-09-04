@@ -9,3 +9,10 @@ DBMS
  +Or on windows the *download_sdks.exe* can be used alternatively.
   
   To compile the engine the provided WAF has to be used. See [here](http://docs.cryengine.com/display/CEPROG/Getting+Started+with+WAF) for more information.
+ if(NOT ANDROID AND NOT ORBIS)
+  	option(OPTION_SCALEFORMHELPER "Use Scaleform Helper" ON)
+ +else()
+ +	set(OPTION_SCALEFORMHELPER TRUE)
+  endif()
+  
+  if(OPTION_STATIC_LINKING)
